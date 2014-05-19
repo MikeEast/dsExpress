@@ -6,6 +6,11 @@ app.get('/', function(req, res) {
     res.send('Hello express');
 });
 
+app.get('/users', function(req, res) {
+    res.set("Content-Type", "application/json;charset=utf-8");
+    res.send({ name: "Mikael Östberg", age: 37 });
+});
+
 var server = http.createServer(app);
 server.listen(process.env.PORT, process.env.IP);
 
