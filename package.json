@@ -1,10 +1,5 @@
 {
-  "name": "Devsum-Express",
-  "version": "0.0.1",
-  "main": "./server.js",
-  "author": {
-      "name": "Mikael Östberg",
-      "mail": "mikael inloop se"
-  }
   "dependencies": {
-    "moment"
+    "express": "~4.2.0"
+  }
+}
