@@ -2,8 +2,20 @@ var http = require('http');
 var express = require('express');
 var app = express();
 
+// To use ejs
+//var ejsEngine = require('ejs-locals');
+//app.engine('ejs', ejsEngine);
+//app.set('view engine', 'ejs');
+
+// To use jade
+//app.set("view engine", "jade");
+
+// To use vash
+app.set('view engine', 'vash');
+
 app.get('/', function(req, res) {
-    res.send('Hello express');
+    //res.send('<h1>Hello express</h1>');
+    res.render("index", { title: "Hello Express" });
 });
 
 app.get('/users', function(req, res) {
