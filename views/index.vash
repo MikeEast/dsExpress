@@ -2,5 +2,16 @@
     @html.block('body', function(model) {
         <h1>@model.title</h1>
         <p>Doing the vash</p>
+        
+        @if(model.error) {
+            <div>There was a problem: @model.error</div>
+        }
+        
+        <h2>Products</h2>
+        <ul>
+        @model.products.forEach(function(product) {
+            <li>@product.Name</li>
+        })
+        </ul>
     })
 })
