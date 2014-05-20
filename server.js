@@ -3,8 +3,6 @@ var express = require('express');
 var app = express();
 var controllers = require("./controllers");
 
-controllers.init(app);
-
 // To use ejs
 //var ejsEngine = require('ejs-locals');
 //app.engine('ejs', ejsEngine);
@@ -15,6 +13,12 @@ controllers.init(app);
 
 // To use vash
 app.set('view engine', 'vash');
+
+// static content
+app.use(express.static(__dirname + '/public'));
+
+// routes
+controllers.init(app);
 
 app.get('/users', function(req, res) {
     res.set("Content-Type", "application/json;charset=utf-8");
