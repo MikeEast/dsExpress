@@ -4,7 +4,19 @@
     var database = require("./database");
 
     data.getProducts = function(next) {
-        next(null, sample.Products);
+        database.getDb(function(err, db) {
+            if (err) {
+                next(err, null);
+            } else {
+                db.products.find().sort({ Name: -1 }).toArray(function(err, results) {
+                    if (err) {
+                        next(err, null);
+                    } else {
+                        next(null, results);
+                    }
+                });
+            }
+        });
     };
 
     function insertSampleData() {
@@ -25,6 +37,8 @@
                                     }
                                 });
                             });
+                        } else {
+                            console.log('Database already has sample data');
                         }
                     }
                 });
