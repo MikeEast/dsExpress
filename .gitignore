@@ -29,3 +29,4 @@ node_modules
 *.sln
 *.suo
 obj
+dsExpress.v12.suo
