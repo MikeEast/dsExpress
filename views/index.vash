@@ -9,9 +9,11 @@
         
         <h2>Products</h2>
         <ul>
-        @model.products.forEach(function(product) {
-            <li>@product.Name</li>
-        })
+		@if(model.products) {
+			@model.products.forEach(function(product) {
+				<li>@product.Name</li>
+			})
+		}
         </ul>
     })
 })
