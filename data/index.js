@@ -25,6 +25,8 @@
                                     }
                                 });
                             });
+                        } else {
+                            console.log('Database already has sample data');
                         }
                     }
                 });
